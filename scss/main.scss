@@ -1,0 +1,57 @@
+// ----------------------------------------------
+// $font: 500 16px/1.45em Verdana, sans-serif;
+
+// @import 'font-kilde-sans';
+// $font: 250 normal 18px/1.25em 'Kilde Sans', Verdana, sans-serif;
+
+// @import 'font-colaborate';
+// $ff_thin: 'Colaborate-Thin';
+// $ff_regular: 'Colaborate-Regular';
+// $ff_bold: 'Colaborate-Bold';
+// $font: 400 20px/1.4em $ff_thin, Verdana, sans-serif;
+
+@import 'font-source-sans-pro';
+$font: 200 20px/1.4 'Source Sans Pro', sans-serif;
+
+// ----------------------------------------------
+// z-index: -1      - background image
+// z-index: 100     - admin menu
+// ----------------------------------------------
+$clr_txt: #db9700;
+$clr_lnk: #3eb9f1;
+$clr_lnk_hvr: adjust-color($color: $clr_lnk, $saturation: -25%, $lightness: 10%);
+$clr_grey: #9098a0;
+$clr_light_grey: #c4ccd4;
+$blue: #2a4e7c;
+$blue2: #43699b;
+$white: #f7f7f7;
+$black: #272727;
+$gold: #caae0c;
+
+$transition: .15s ease-in all;
+
+$s_text: 12px;
+$m_text: 14px;
+
+// ----------------------------------------------
+@import 'blocks/mixins';
+
+// ----------------------------------------------
+@import 'blocks/default';
+
+// ----------------------------------------------
+@import 'blocks/page';
+@import 'blocks/region';
+@import 'blocks/messenger';
+@import 'blocks/console';
+@import 'blocks/logo';
+@import 'blocks/menu';
+@import 'blocks/user-bar';
+@import 'blocks/form';
+@import 'blocks/buttons';
+@import 'blocks/cookies';
+@import 'blocks/admin-menu';
+@import 'blocks/poe-filters';
+
+// ----------------------------------------------
+@import 'blocks/other';

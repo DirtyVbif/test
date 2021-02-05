@@ -1,0 +1,179 @@
+$bkgd_input: #373737ac;
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    position: relative;
+    margin: 0 auto;
+
+    &__field {
+        width: 100%;
+
+        &_footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        &_remember {
+            width: auto;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__label {
+        &_remember {
+            font-size: 16px;
+        }
+    }
+
+    &__input {
+        background: $bkgd_input;
+        border: 1px solid $bkgd_input;
+        width: 100%;
+        border-radius: 4px;
+        transition: $transition;
+        padding: 5px 10px;
+        color: white;
+
+        &::placeholder {
+            color: $clr_grey;
+        }
+
+        &:hover {
+            border-color: $clr_grey;
+        }
+
+        &:focus {
+            border-color: $gold;
+            background: #272727;
+        }
+    }
+
+    &__checkbox {
+        visibility: hidden;
+        position: fixed;
+        left: -9999px;
+        & ~ label {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            color: $clr_light_grey;
+            transition: $transition;
+            &::before {
+                display: inline-block;
+                content: "";
+                width: 20px;
+                height: 20px;
+                border: 1px solid $clr_grey;
+                background-color: $bkgd_input;
+                background-size: 14px 14px;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 4px;
+                margin-right: 5px;
+                transition: $transition;
+            }
+            &:hover {
+                color: $clr_lnk_hvr;
+                &::before {
+                    border-color: $clr_lnk_hvr;
+                }
+            }
+        }
+        &:checked ~ label {
+            color: $white;
+            &::before {
+                background-image: url('/files/check.svg');
+                background-color: $blue2;
+                border-color: $blue2;
+            }
+        }
+    }
+
+    &__btn {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px 12px;
+        background: linear-gradient(80deg, $blue, $blue2);
+        background-size: 200% 100%;
+        background-position-x: 0;
+        transition: $transition;
+        color: $clr_light_grey;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-size: 18px;
+
+        &:hover {
+            background-position-x: 100%;
+        }
+    }
+
+    &_login {
+        &__field {
+            &_footer {
+                justify-content: space-around;
+            }
+        }
+    }
+
+    &_pf-new {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 30px;
+        width: auto;
+
+        &__header {
+            color: $gold;
+            text-transform: uppercase;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        &__input {
+            background: none;
+            border: none;
+            border-bottom: 1px solid $gold;
+            border-radius: 0;
+            margin: 10px 0;
+            text-align: center;
+
+            &::placeholder {
+                color: adjust-color($color: $gold, $saturation: -25%, $lightness: 15%);
+            }
+
+            &:hover {
+                border-color: adjust-color($color: $gold, $saturation: 15%, $lightness: 25%);
+            }
+
+            &:focus {
+                background: none;
+                border-color: adjust-color($color: $gold, $saturation: 15%, $lightness: 15%);
+            }
+        }
+
+        &__btn {
+            background: none;
+            font-size: 80px;
+            line-height: 0;
+            font-weight: 300;
+            width: 80px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: adjust-color($color: $gold, $saturation: -25%, $lightness: 15%);
+
+            &:hover {
+                color: adjust-color($color: $gold, $saturation: 0%, $lightness: 30%);
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+$cookies_notice_h: 60px;
+
+.cookies-notice {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: $cookies_notice_h;
+    background: $clr_light_grey;
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__text {
+        font-size: 22px;
+    }
+
+    &__submit {
+        margin-left: 15px;
+        text-transform: uppercase;
+        background: #16425c;
+        font-size: 20px;
+        font-weight: bold;
+        color: $white;
+        transition: $transition;
+
+        &:hover {
+            background: #21516d;
+            color: white;
+        }
+    }
+}
+
+.cookies-notice-margin {
+    margin-bottom: $cookies_notice_h;
+}

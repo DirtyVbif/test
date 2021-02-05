@@ -1,0 +1,42 @@
+$admin_menu_h: 60px;
+
+.admin-menu-margin {
+    margin-top: $admin_menu_h;
+}
+
+.admin-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: $admin_menu_h;
+    width: 100vw;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #474747;
+    z-index: 100;
+
+    &__nav {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        height: 100%;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        height: 100%;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 16px;
+
+        &:hover {
+            color: #d9ee1e;
+            background: #f7f7f70e;
+        }
+    }
+}

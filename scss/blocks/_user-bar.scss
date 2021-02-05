@@ -1,0 +1,10 @@
+.user-bar {
+    @include noul();
+    display: flex;
+
+    &__link {
+        display: block;
+        padding: 5px 10px;
+        color: white;
+    }
+}

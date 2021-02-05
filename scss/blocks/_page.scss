@@ -1,0 +1,28 @@
+.page-header {
+    text-align: center;
+    color: $gold;
+    font-family: 600;
+    width: 100%;
+}
+
+.page {
+    &__background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background: url('/files/images/poe-background.jpg') no-repeat center;
+        background-size: cover;
+    }
+    &__main {
+        @include wrapper();
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__content {
+        width: 100%;
+        flex: 1;
+    }
+}

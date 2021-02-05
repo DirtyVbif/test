@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    min-width: 380px;
+}
+
+body {
+    margin: 0;
+    font: $font;
+}
+
+button,
+input[type=submit],
+input[type=reset] {
+    appearance: none;
+    cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    border-radius: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+a {
+    transition: $transition;
+    color: $clr_lnk;
+    text-decoration: none;
+    &:hover {
+        color: $clr_lnk_hvr;
+    }
+}
+
+.hidden {
+    display: none;
+}
