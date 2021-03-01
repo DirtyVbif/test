@@ -1,3 +1,14 @@
+# set access with ip
+Order Deny,Allow
+Deny from all
+Allow from 91.219.24.75
+
+# set access with password
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /home/n/nolu054/moneyzz.ru/public_html/.htpasswd
+Require valid-user
+
 #
 # Apache/PHP/Drupal settings:
 #
@@ -62,6 +73,10 @@ AddEncoding gzip svgz
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
+  # Hard redirect from http:// to https://
+  RewriteCond %{HTTPS} !on
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
   # you don't bounce between http and https.
@@ -102,8 +117,8 @@ AddEncoding gzip svgz
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/foo will be redirected to http://example.com/foo)
   # uncomment the following:
-  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  # RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
